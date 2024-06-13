@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  button.correct {
+    background-color: green;
+    color: white;
+  }
+  
+  button.incorrect {
+    background-color: red;
+    color: white;
+  }
+  
+  .correct-answer {
+    color: green;
+  }
+  
+  .incorrect-answer {
+    color: red;
+  }
+  
+  button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
