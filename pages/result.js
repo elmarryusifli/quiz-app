@@ -58,7 +58,7 @@ export default function Result() {
         </div>
       ))}
       <Link href="/">
-        <a>Back to Home</a>
+        Back to Home
       </Link>
     </div>
   );

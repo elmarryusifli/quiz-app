@@ -38,26 +38,28 @@ export default function Quiz() {
   };
 
   return (
-    <div>
+    <div className="quiz-container">
       {questions.length > 0 ? (
         <>
-          <div>
+          <div className="quiz-question">
             <p>{questions[currentQuestion].text}</p>
-            {questions[currentQuestion].options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => selectAnswer(currentQuestion, String.fromCharCode(97 + index))}
-                className={
-                  userAnswers[`question${currentQuestion}`] === String.fromCharCode(97 + index)
-                    ? questions[currentQuestion].correctAnswer === String.fromCharCode(97 + index)
-                      ? 'correct'
-                      : 'incorrect'
-                    : ''
-                }
-              >
-                {String.fromCharCode(97 + index)}. {option}
-              </button>
-            ))}
+            <div className="quiz-options">
+              {questions[currentQuestion].options.map((option, index) => (
+                <button
+                  key={index}
+                  onClick={() => selectAnswer(currentQuestion, String.fromCharCode(97 + index))}
+                  className={
+                    userAnswers[`question${currentQuestion}`] === String.fromCharCode(97 + index)
+                      ? questions[currentQuestion].correctAnswer === String.fromCharCode(97 + index)
+                        ? 'correct'
+                        : 'incorrect'
+                      : ''
+                  }
+                >
+                  {String.fromCharCode(97 + index)}. {option}
+                </button>
+              ))}
+            </div>
           </div>
           <div>
             <button onClick={() => setCurrentQuestion(currentQuestion - 1)} disabled={currentQuestion === 0}>

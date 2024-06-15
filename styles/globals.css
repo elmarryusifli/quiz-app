@@ -1,5 +1,12 @@
-body {
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
     font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
   }
   
   .dark-mode {
@@ -29,5 +36,28 @@ body {
     padding: 10px;
     margin: 5px;
     cursor: pointer;
+  }
+  
+  .dark-mode-toggle {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .quiz-container {
+    padding: 20px;
+  }
+  
+  .quiz-question {
+    margin-bottom: 15px;
+  }
+  
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .quiz-options button {
+    margin-bottom: 5px;
   }
   
