@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 export default function Result() {
   const [results, setResults] = useState([]);
@@ -10,6 +11,7 @@ export default function Result() {
     const fetchResults = async () => {
       try {
         const response = await axios.get('/api/results');
+        console.log('Results fetched:', response.data); // Debug log
         setResults(response.data);
 
         const correct = response.data.filter(result => result.correct).length;
@@ -55,7 +57,9 @@ export default function Result() {
           )}
         </div>
       ))}
-      <a href="/">Back to Home</a>
+      <Link href="/">
+        <a>Back to Home</a>
+      </Link>
     </div>
   );
 }
