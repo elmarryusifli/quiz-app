@@ -20,32 +20,44 @@ export default function NavBar() {
 
   return (
     <nav className="navbar">
-      <Link href="/">Home</Link>
-      <Link href="/create-quiz">Create Quiz</Link>
-      <Link href="/quizzes">Quizzes</Link>
-      <Link href="/documentation">Documentation</Link>
+      <div className="nav-links">
+        <Link href="/">Home</Link>
+        <Link href="/create-quiz">Create Quiz</Link>
+        <Link href="/quizzes">Quizzes</Link>
+        <Link href="/documentation">Documentation</Link>
+      </div>
       <button className="dark-mode-toggle" onClick={toggleDarkMode}>
         {darkMode ? <FaSun /> : <FaMoon />}
       </button>
       <style jsx>{`
         .navbar {
           display: flex;
-          justify-content: space-between;
+          justify-content: center; /* Center the items horizontally */
+          align-items: center; /* Center the items vertically */
           padding: 1rem;
           background-color: #333;
           color: white;
         }
-        .navbar a {
-          margin: 0 1rem;
-          color: white;
-          text-decoration: none;
+        .nav-links {
+          display: flex;
+          gap: 2rem; /* Space between links */
+        }
+        .nav-links a {
+          font-size: 3rem; /* 3 times larger */
+          color: lightgrey; /* Light grey font color */
+          text-decoration: none; /* Remove underline */
+          transition: color 0.3s;
+        }
+        .nav-links a:hover {
+          color: white; /* Optional: change color on hover */
         }
         .dark-mode-toggle {
           background: none;
           border: none;
           color: white;
           cursor: pointer;
-          font-size: 1.5rem;
+          font-size: 2.5rem; /* Adjust size as needed */
+          margin-left: 2rem; /* Space from the links */
         }
       `}</style>
     </nav>

@@ -38,12 +38,6 @@ body, html {
     cursor: pointer;
   }
   
-  .dark-mode-toggle {
-    margin: 10px;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
   .quiz-container {
     padding: 20px;
   }
