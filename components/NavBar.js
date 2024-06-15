@@ -43,13 +43,13 @@ export default function NavBar() {
           gap: 2rem; /* Space between links */
         }
         .nav-links a {
-          font-size: 3rem; /* 3 times larger */
-          color: lightgrey; /* Light grey font color */
+          font-size: 2em; /* H1 size */
+          color: white; /* White font color */
           text-decoration: none; /* Remove underline */
           transition: color 0.3s;
         }
         .nav-links a:hover {
-          color: white; /* Optional: change color on hover */
+          color: lightgrey; /* Optional: change color on hover */
         }
         .dark-mode-toggle {
           background: none;
