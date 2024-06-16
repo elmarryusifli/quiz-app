@@ -64,9 +64,9 @@ function CreateQuiz() {
 
   return (
     <Layout>
-      <h1>Create Quiz</h1>
+      <h1 className='cq'>Create Quiz</h1>
       <form onSubmit={handleSubmit}>
-        <textarea
+        <textarea className='tcq'
           value={questionsText}
           onChange={(e) => setQuestionsText(e.target.value)}
           rows="10"

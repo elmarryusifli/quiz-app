@@ -31,7 +31,7 @@ const Quizzes = () => {
   return (
     <Layout>
     <div>
-      <h1>Quizzes</h1>
+      <h1 className='qz'>Quizzes</h1>
       <ul>
         {topics.map(topic => (
           <li key={topic} className="quiz-topic">

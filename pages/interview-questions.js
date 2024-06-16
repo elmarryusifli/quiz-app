@@ -30,10 +30,10 @@ const InterviewQuestions = () => {
   return (
     <Layout>
     <div>
-      <h1>Interview Questions</h1>
+      <h1 className='iq'>Interview Questions</h1>
       <ul>
         {topics.map(topic => (
-          <li key={topic}>
+          <li key={topic} className="iqt">
             <Link href={`/interview-questions/${topic.toLowerCase().replace(/ /g, '-')}`}>
               {topic} Interview Questions
             </Link>
