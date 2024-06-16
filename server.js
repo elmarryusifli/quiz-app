@@ -1,11 +1,11 @@
-// server.js
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 
 // Your personal access token
-const PERSONAL_ACCESS_TOKEN = "Ilqaroglan13542@";
+const PERSONAL_ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN;
 
 app.use(bodyParser.json());
 

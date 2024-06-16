@@ -308,9 +308,9 @@ export default function NavBar() {
     <nav className="navbar">
       <div className="nav-links">
         <Link href="/">Documentation</Link>
-        <Link href="/create-quiz">Create Quiz</Link>
         <Link href="/quizzes">Quizzes</Link>
         <Link href="/interview-questions">IQ</Link>
+        <Link href="/create-quiz">Create_Quiz</Link>
       </div>
       <div>
         <button className="dark-mode-toggle" onClick={toggleDarkMode}>
