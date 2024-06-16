@@ -12,7 +12,7 @@ export default function Login() {
       const response = await axios.post('/api/login', { token });
       if (response.status === 200) {
         localStorage.setItem('authToken', token);
-        router.push('/index');
+        router.push('/');
       } else {
         setMessage('Authentication failed');
       }
