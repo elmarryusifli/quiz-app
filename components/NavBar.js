@@ -373,8 +373,6 @@
 // }
 
 ///////////////////////////////////////////////////////////////////////////////
-
-
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaSun, FaMoon, FaSignOutAlt, FaBars, FaTimes } from 'react-icons/fa';
@@ -415,8 +413,16 @@ export default function NavBar() {
         <Link href="/interview-questions">IQ</Link>
         <Link href="/create-quiz">Create Quiz</Link>
       </div>
-      <div className="menu-icon" onClick={toggleMenu}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
+      <div className="buttons">
+        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+          {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
+        <button onClick={handleLogout} className="logout-button">
+          <FaSignOutAlt />
+        </button>
+        <div className="menu-icon" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
       </div>
       <div className={`menu ${menuOpen ? 'open' : ''}`}>
         <Link href="/">Documentation</Link>
@@ -438,6 +444,7 @@ export default function NavBar() {
           padding: 1rem;
           background-color: #333;
           color: white;
+          position: relative;
         }
         .nav-links {
           display: flex;
@@ -452,32 +459,9 @@ export default function NavBar() {
         .nav-links a:hover {
           color: lightgrey;
         }
-        .menu-icon {
-          display: none;
-          font-size: 2.5rem;
-          cursor: pointer;
-          margin-left: 2rem;
-        }
-        .menu {
+        .buttons {
           display: flex;
-          flex-direction: column;
           align-items: center;
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100vh;
-          width: 100%;
-          background-color: #333;
-          transform: translateX(-100%);
-          transition: transform 0.3s ease-in-out;
-        }
-        .menu.open {
-          transform: translateX(0);
-        }
-        .menu a,
-        .menu button {
-          font-size: 2em;
-          margin: 1rem 0;
         }
         .dark-mode-toggle {
           background: none;
@@ -495,12 +479,50 @@ export default function NavBar() {
           font-size: 2.5rem;
           margin-left: 1rem;
         }
+        .menu-icon {
+          display: none;
+          font-size: 2.5rem;
+          cursor: pointer;
+          margin-left: 2rem;
+        }
+        .menu {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          width: 100%;
+          background-color: #333;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+          z-index: 10;
+        }
+        .menu.open {
+          display: flex;
+          transform: translateX(0);
+        }
+        .menu a,
+        .menu button {
+          font-size: 2em;
+          margin: 1rem 0;
+          color: white;
+          text-decoration: none;
+        }
+        .menu a:hover {
+          color: lightgrey;
+        }
         @media (max-width: 768px) {
           .nav-links {
             display: none;
           }
           .menu-icon {
             display: block;
+          }
+          .buttons {
+            display: flex;
+            align-items: center;
           }
         }
       `}</style>
