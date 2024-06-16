@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import Layout from '../components/Layout';
 
 export default function Result() {
   const [results, setResults] = useState([]);
@@ -27,6 +28,7 @@ export default function Result() {
   }, []);
 
   return (
+    <Layout>
     <div>
       <h1>Quiz Results</h1>
       <p>Correct Answers: {correctCount}</p>
@@ -61,5 +63,6 @@ export default function Result() {
         Back to Home
       </Link>
     </div>
+    </Layout>
   );
 }
