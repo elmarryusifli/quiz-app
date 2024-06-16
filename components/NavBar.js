@@ -25,6 +25,7 @@ export default function NavBar() {
         <Link href="/create-quiz">Create Quiz</Link>
         <Link href="/quizzes">Quizzes</Link>
         <Link href="/documentation">Documentation</Link>
+        <Link href="/interview-questions">IQ</Link>
       </div>
       <button className="dark-mode-toggle" onClick={toggleDarkMode}>
         {darkMode ? <FaSun /> : <FaMoon />}

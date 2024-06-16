@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Quizzes = () => {
+const InterviewQuestions = () => {
   const topics = [
     "API Testing",
     "Cucumber",
@@ -28,12 +28,12 @@ const Quizzes = () => {
 
   return (
     <div>
-      <h1>Quizzes</h1>
+      <h1>Interview Questions</h1>
       <ul>
         {topics.map(topic => (
-          <li key={topic} className="quiz-topic">
-            <Link href={`/quizzes/${topic.toLowerCase().replace(/ /g, '-')}`}>
-              {topic}
+          <li key={topic}>
+            <Link href={`/interview-questions/${topic.toLowerCase().replace(/ /g, '-')}`}>
+              {topic} Interview Questions
             </Link>
           </li>
         ))}
@@ -46,17 +46,17 @@ const Quizzes = () => {
         li {
           margin: 10px 0;
         }
-        .quiz-topic a {
+        a {
           font-size: 1.5em;
           color: blue;
           text-decoration: none;
         }
-        .quiz-topic a:hover {
-          text-decoration: none;
+        a:hover {
+          text-decoration: underline;
         }
       `}</style>
     </div>
   );
 };
 
-export default Quizzes;
+export default InterviewQuestions;

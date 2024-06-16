@@ -55,3 +55,25 @@ body, html {
     margin-bottom: 5px;
   }
   
+.nav-links a {
+    font-size: 2em; /* H1 size */
+    color: rgb(186, 186, 186); /* White font color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: rgb(255, 134, 28); /* Optional: change color on hover */
+  }
+
+  .quiz-topic a {
+    font-size: 1em;
+    color: rgb(186, 186, 186); /* White font color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s;
+    padding: 10px;
+  }
+
+  .quiz-topic a:hover {
+    color: rgb(255, 134, 28);
+  }
