@@ -373,10 +373,13 @@
 // }
 
 ///////////////////////////////////////////////////////////////////////////////
+
+
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaSun, FaMoon, FaSignOutAlt, FaBars, FaTimes } from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import styles from '../styles/NavBar.module.css';
 
 export default function NavBar() {
   const [darkMode, setDarkMode] = useState(true);
@@ -406,126 +409,36 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="navbar">
-      <div className="nav-links">
+    <nav className={styles.navbar}>
+      <div className={styles.navLinks}>
         <Link href="/">Documentation</Link>
         <Link href="/quizzes">Quizzes</Link>
         <Link href="/interview-questions">IQ</Link>
         <Link href="/create-quiz">Create Quiz</Link>
       </div>
-      <div className="buttons">
-        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+      <div className={styles.buttons}>
+        <span className={styles.darkModeToggle} onClick={toggleDarkMode}>
           {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
-        <button onClick={handleLogout} className="logout-button">
+        </span>
+        <span onClick={handleLogout} className={styles.logoutButton}>
           <FaSignOutAlt />
-        </button>
-        <div className="menu-icon" onClick={toggleMenu}>
+        </span>
+        <span className={styles.menuIcon} onClick={toggleMenu}>
           {menuOpen ? <FaTimes /> : <FaBars />}
-        </div>
+        </span>
       </div>
-      <div className={`menu ${menuOpen ? 'open' : ''}`}>
+      <div className={`${styles.menu} ${menuOpen ? styles.open : ''}`}>
         <Link href="/">Documentation</Link>
         <Link href="/quizzes">Quizzes</Link>
         <Link href="/interview-questions">IQ</Link>
         <Link href="/create-quiz">Create Quiz</Link>
-        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+        <span className={styles.darkModeToggle} onClick={toggleDarkMode}>
           {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
-        <button onClick={handleLogout} className="logout-button">
+        </span>
+        <span onClick={handleLogout} className={styles.logoutButton}>
           <FaSignOutAlt />
-        </button>
+        </span>
       </div>
-      <style jsx>{`
-        .navbar {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem;
-          background-color: #333;
-          color: white;
-          position: relative;
-        }
-        .nav-links {
-          display: flex;
-          gap: 2rem;
-        }
-        .nav-links a {
-          font-size: 2em;
-          color: white;
-          text-decoration: none;
-          transition: color 0.3s;
-        }
-        .nav-links a:hover {
-          color: lightgrey;
-        }
-        .buttons {
-          display: flex;
-          align-items: center;
-        }
-        .dark-mode-toggle {
-          background: none;
-          border: none;
-          color: white;
-          cursor: pointer;
-          font-size: 2.5rem;
-          margin-left: 2rem;
-        }
-        .logout-button {
-          background: none;
-          border: none;
-          color: white;
-          cursor: pointer;
-          font-size: 2.5rem;
-          margin-left: 1rem;
-        }
-        .menu-icon {
-          display: none;
-          font-size: 2.5rem;
-          cursor: pointer;
-          margin-left: 2rem;
-        }
-        .menu {
-          display: none;
-          flex-direction: column;
-          align-items: center;
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100vh;
-          width: 100%;
-          background-color: #333;
-          transform: translateX(-100%);
-          transition: transform 0.3s ease-in-out;
-          z-index: 10;
-        }
-        .menu.open {
-          display: flex;
-          transform: translateX(0);
-        }
-        .menu a,
-        .menu button {
-          font-size: 2em;
-          margin: 1rem 0;
-          color: white;
-          text-decoration: none;
-        }
-        .menu a:hover {
-          color: lightgrey;
-        }
-        @media (max-width: 768px) {
-          .nav-links {
-            display: none;
-          }
-          .menu-icon {
-            display: block;
-          }
-          .buttons {
-            display: flex;
-            align-items: center;
-          }
-        }
-      `}</style>
     </nav>
   );
 }
