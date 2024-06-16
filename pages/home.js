@@ -1,11 +1,12 @@
 import withProtectedRoute from '../components/ProtectedRoute';
+import Layout from '../components/Layout';
 
 const Home = () => {
   return (
-    <div>
+    <Layout>
       <h1>Home</h1>
       <p>Welcome to the home page!</p>
-    </div>
+    </Layout>
   );
 };
 

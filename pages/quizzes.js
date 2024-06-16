@@ -1,5 +1,8 @@
-import Link from 'next/link';
 import withProtectedRoute from '../components/ProtectedRoute';
+import Layout from '../components/Layout';
+
+ import Link from 'next/link';
+// import withProtectedRoute from '../components/ProtectedRoute';
 
 const Quizzes = () => {
   const topics = [
