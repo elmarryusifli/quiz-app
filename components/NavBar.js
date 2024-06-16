@@ -246,9 +246,6 @@ export default function NavBar() {
 
   return (
     <nav className="navbar">
-      {/* <div className="logo">
-        <Link href="/">Logo</Link>
-      </div> */}
       <button className="menu-toggle" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </button>
