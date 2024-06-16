@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Layout from '../components/Layout';
 
 const InterviewQuestions = () => {
   const topics = [
@@ -27,6 +28,7 @@ const InterviewQuestions = () => {
   ];
 
   return (
+    <Layout>
     <div>
       <h1>Interview Questions</h1>
       <ul>
@@ -56,6 +58,7 @@ const InterviewQuestions = () => {
         }
       `}</style>
     </div>
+    </Layout>
   );
 };
 

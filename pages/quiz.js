@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Layout from '../components/Layout';
 
 export default function Quiz() {
   const [questions, setQuestions] = useState([]);
@@ -38,6 +39,7 @@ export default function Quiz() {
   };
 
   return (
+    <Layout>
     <div className="quiz-container">
       {questions.length > 0 ? (
         <>
@@ -80,5 +82,6 @@ export default function Quiz() {
         <p>Loading questions...</p>
       )}
     </div>
+    </Layout>
   );
 }
