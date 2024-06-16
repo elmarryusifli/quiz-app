@@ -1,4 +1,3 @@
-// pages/protected.js
 import withProtectedRoute from '../components/ProtectedRoute';
 
 const Protected = () => {

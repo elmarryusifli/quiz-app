@@ -1,4 +1,3 @@
-// pages/api/protected.js
 export default function handler(req, res) {
   const token = req.headers['authorization'];
   const PERSONAL_ACCESS_TOKEN = process.env.PERSONAL_ACCESS_TOKEN;
