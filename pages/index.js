@@ -1,12 +1,4 @@
-// export default function Home() {
-//     return (
-//       <div>
-//         <h1>Welcome to the Quiz App</h1>
-//         <p>Use the navigation bar to create quizzes, view quizzes, or read the documentation.</p>
-//       </div>
-//     );
-//   }
-  
+// pages/index.js
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';

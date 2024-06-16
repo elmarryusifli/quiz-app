@@ -1,4 +1,3 @@
-// pages/api/login.js
 export default function handler(req, res) {
   const { token } = req.body;
   const PERSONAL_ACCESS_TOKEN = "Ilqaroglan13579@";

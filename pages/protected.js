@@ -1,30 +1,13 @@
 // pages/protected.js
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import withProtectedRoute from '../components/ProtectedRoute';
 
-export default function Protected() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const token = localStorage.getItem('authToken');
-      try {
-        const response = await axios.get('/api/protected', {
-          headers: { Authorization: token }
-        });
-        setMessage(response.data.message);
-      } catch (error) {
-        setMessage('Access denied');
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const Protected = () => {
   return (
     <div>
-      <h1>Protected Data</h1>
-      <p>{message}</p>
+      <h1>Protected Page</h1>
+      <p>This is a protected route.</p>
     </div>
   );
-}
+};
+
+export default withProtectedRoute(Protected);

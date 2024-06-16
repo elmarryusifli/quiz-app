@@ -1,20 +1,27 @@
-// components/ProtectedRoute.js
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-const ProtectedRoute = (WrappedComponent) => {
-  return (props) => {
+const withProtectedRoute = (WrappedComponent) => {
+  const ProtectedRoute = (props) => {
     const router = useRouter();
 
     useEffect(() => {
       const token = localStorage.getItem('authToken');
       if (!token) {
-        router.push('/');
+        router.push('/login');
       }
-    }, []);
+    }, [router]);
 
     return <WrappedComponent {...props} />;
   };
+
+  ProtectedRoute.displayName = `withProtectedRoute(${getDisplayName(WrappedComponent)})`;
+
+  return ProtectedRoute;
 };
 
-export default ProtectedRoute;
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
+
+export default withProtectedRoute;

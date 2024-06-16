@@ -1,13 +1,19 @@
-import '../styles/globals.css';
-import NavBar from '../components/NavBar';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <NavBar />
-      <Component {...pageProps} />
-    </>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (!token && router.pathname !== '/login') {
+      router.push('/login');
+    } else if (token && router.pathname === '/login') {
+      router.push('/home');
+    }
+  }, [router]);
+
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
