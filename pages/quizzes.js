@@ -1,8 +1,6 @@
 import withProtectedRoute from '../components/ProtectedRoute';
 import Layout from '../components/Layout';
-
- import Link from 'next/link';
-// import withProtectedRoute from '../components/ProtectedRoute';
+import Link from 'next/link';
 
 const Quizzes = () => {
   const topics = [
@@ -31,6 +29,7 @@ const Quizzes = () => {
   ];
 
   return (
+    <Layout>
     <div>
       <h1>Quizzes</h1>
       <ul>
@@ -60,6 +59,7 @@ const Quizzes = () => {
         }
       `}</style>
     </div>
+    </Layout>
   );
 };
 

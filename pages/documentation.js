@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Layout from '../components/Layout';
 
 const Documentation = () => {
   const topics = [
@@ -27,6 +28,7 @@ const Documentation = () => {
   ];
 
   return (
+    <Layout>
     <div className="container">
       <h1>Documentation</h1>
       <ul className="topics-list">
@@ -39,6 +41,7 @@ const Documentation = () => {
         ))}
       </ul>
     </div>
+    </Layout>
   );
 };
 

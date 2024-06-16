@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import Layout from '../components/Layout';
+import withProtectedRoute from '../components/ProtectedRoute';
 
-export default function CreateQuiz() {
+function CreateQuiz() {
   const [questionsText, setQuestionsText] = useState('');
   const router = useRouter();
 
@@ -18,7 +20,7 @@ export default function CreateQuiz() {
   };
 
   return (
-    <div>
+    <Layout>
       <h1>Create Quiz</h1>
       <form onSubmit={handleSubmit}>
         <textarea
@@ -30,6 +32,8 @@ export default function CreateQuiz() {
         ></textarea>
         <button type="submit">Add Questions</button>
       </form>
-    </div>
+    </Layout>
   );
 }
+
+export default withProtectedRoute(CreateQuiz);
