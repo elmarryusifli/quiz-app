@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
+import Layout from './Layout';
 
 export default function NavBar() {
   const [darkMode, setDarkMode] = useState(true);
@@ -19,6 +20,7 @@ export default function NavBar() {
   };
 
   return (
+  <Layout>
     <nav className="navbar">
       <div className="nav-links">
         <Link href="/home">Home</Link>
@@ -71,5 +73,6 @@ export default function NavBar() {
         }
       `}</style>
     </nav>
+    </Layout>
   );
 }
